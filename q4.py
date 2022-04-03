@@ -6,14 +6,14 @@ from typing import List
 
 def main():
     stack: List[int] = [1015, 1014, 1013, 1012, 1011]
-    placa = 10
-    print(conseguir_sair(stack, placa))
+    placa = 1015
+    print('Sequência de carros para ser retirados ' +  str(conseguir_sair(stack, placa)))
 
 def conseguir_sair(stack, placa):
-    carros_para_retirar = 0
+    carros_para_retirar: List[int] = []
     for element in stack[::-1]:
         if element != placa:
-            carros_para_retirar += 1
+            carros_para_retirar.append(element)
         elif element == placa:
             return carros_para_retirar
 
